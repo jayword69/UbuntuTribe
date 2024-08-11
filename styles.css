@@ -1,0 +1,282 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #333333); /* Gradiente oscuro */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: #222222; /* Fondo del header oscuro */
+    color: #ffffff;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #ff5722;
+    text-shadow: 0 0 5px #ff5722;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #FF5722, #FFC107); /* Gradiente vibrante */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4em;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Hero Video */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.5); /* Oscurece el video para mejor legibilidad del texto */
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff5722; /* Color vibrante */
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #FFC107;
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    background: #1e1e1e;
+    color: #ffffff;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* General Card Styles */
+.card-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    text-align: center;
+    max-width: 350px;
+    background: #2c2c2c; /* Fondo de las cards */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 15px;
+    color: #ffffff; /* Texto en blanco */
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #ff5722; /* Color naranja */
+}
+
+.card-content p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #333333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+form input, form textarea, form button {
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form input, form textarea {
+    background: #ffffff;
+    color: #333333;
+}
+
+form button {
+    background-color: #ff5722; /* Color del botón */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: #FFC107;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        gap: 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.2em;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+    }
+    
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+    z-index: 0;
+    filter: brightness(0.7); /* Oscurece el video para mejorar la legibilidad del texto */
+}
